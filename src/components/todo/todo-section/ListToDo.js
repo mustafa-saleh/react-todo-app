@@ -46,6 +46,8 @@ class ListToDo extends Component {
         (todo) => todo.id === newProps.toggleId.id
       );
       this.props.todos[idx].done = !this.props.todos[idx].done;
+      const item = this.props.todos[idx];
+      this.props.EditToDo(item.id, item);
     }
 
     if(Object.entries(newProps.editDialog).length > 0){

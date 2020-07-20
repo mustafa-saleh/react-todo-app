@@ -1,4 +1,4 @@
-const BASE_URL = "https://localhost:5001/api/";
+const BASE_URL = "https://node-personal-assistant.herokuapp.com/api/";
 
 export {
     BASE_URL,
