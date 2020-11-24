@@ -53,7 +53,7 @@ class EditDialogSlide extends Component {
         task: {
           ...this.state.task,
           categoryError: categoryError,
-          bodyError: bodyError
+          bodyError: bodyError,
         },
       });
       return false;
@@ -70,6 +70,7 @@ class EditDialogSlide extends Component {
           categoryName: this.state.task.category,
           body: this.state.task.body,
           id: this.props.editDialog.task.id,
+          done: this.props.editDialog.task.done,
         };
 
         this.props.EditDialogAction(item, action);
@@ -92,7 +93,11 @@ class EditDialogSlide extends Component {
     return (
       <div>
         <Dialog
-          open={(this.props.editDialog.open === undefined)? false: this.props.editDialog.open}
+          open={
+            this.props.editDialog.open === undefined
+              ? false
+              : this.props.editDialog.open
+          }
           TransitionComponent={Transition}
           keepMounted
           onClose={() => this.handleClose("cancel")}
@@ -119,7 +124,10 @@ class EditDialogSlide extends Component {
             <Button onClick={() => this.handleClose("cancel")} color="primary">
               Cancel
             </Button>
-            <Button onClick={() => this.handleClose("edit")} style={{color: green[500]}}>
+            <Button
+              onClick={() => this.handleClose("edit")}
+              style={{ color: green[500] }}
+            >
               Save
             </Button>
           </DialogActions>
@@ -131,9 +139,7 @@ class EditDialogSlide extends Component {
 
 const mapStateToProps = (state) => ({
   editDialog: state.ToDo.openEditDialog,
-  categories: state.Categories.categories
+  categories: state.Categories.categories,
 });
 
-export default connect(mapStateToProps, { EditDialogAction })(
-  EditDialogSlide
-);
+export default connect(mapStateToProps, { EditDialogAction })(EditDialogSlide);

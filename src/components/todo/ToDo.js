@@ -31,10 +31,8 @@ class ToDo extends Component {
             <ToDoSection />
           </div>
         ) : (
-          <div style={{ width: "100%", height: "100%", textAlign: "center" }}>
-            <h4 style={{ margin: "auto" }}>
-              SERVER IS NOT REACHABLE!! :(
-            </h4>
+          <div style={{ width: "100%", height: "100vh", textAlign: "center" }}>
+            <h6 style={{ margin: "auto" }}>Loading...</h6>
           </div>
         )}
       </div>

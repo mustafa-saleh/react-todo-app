@@ -6,15 +6,14 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
-import { PRIMARY } from '../../config/colors';
+import { PRIMARY } from "../../config/colors";
 
 const useStyle = makeStyles({
   root: {
     background: PRIMARY,
     // opacity: 0.19,
   },
-  brand: {
-  },
+  brand: {},
   name: {
     color: "#3C64B1",
     fontWeight: "bold",
@@ -26,11 +25,11 @@ const Header = (props) => {
 
   return (
     <div>
-      <AppBar position="sticky" className={classes.root}>
+      <AppBar className={classes.root}>
         <Toolbar className={classes.brand}>
           <Container>
             <Typography variant="h6" className={classes.name}>
-              KEEP UP THE GOOD WORK
+              TODO APP HEADER
             </Typography>
           </Container>
         </Toolbar>

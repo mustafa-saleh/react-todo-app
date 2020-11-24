@@ -12,35 +12,34 @@ import {
   EDIT_DIALOG_ACTION,
 } from "./types";
 import { BASE_URL } from "../../config/config";
-import { getData, editData, postData, deleteData} from '../../utils/fetch';
+import { getData, editData, postData, deleteData } from "../../utils/fetch";
 
 export const FetchToDos = () => (dispatch) => {
-
-  getData(BASE_URL + "todos")
-    .then(
-      result => {
-        console.log('SUCCESS:', result)
-        return dispatch({
-          type: FETCH_TODOS,
-          payload: result
-        })
-      },
-      error => {
-        console.log('ERROR:', error)
-      }
-    )
+  getData(BASE_URL + "todos").then(
+    (result) => {
+      // console.log('SUCCESS:', result)
+      return dispatch({
+        type: FETCH_TODOS,
+        payload: result,
+      });
+    },
+    (error) => {
+      console.log("ERROR:", error);
+    }
+  );
 };
 
 export const AddToDo = (item) => (dispatch) => {
-  postData(BASE_URL + "todos", item)
-    .then(result => {
-      console.log("SUCCESS:", result)
+  postData(BASE_URL + "todos", item).then(
+    (result) => {
+      // console.log("SUCCESS:", result);
       return dispatch({
         type: ADD_TODO,
-        payload: result
-      })
+        payload: result,
+      });
     },
-    error => console.log("ERROR:", error))
+    (error) => console.log("ERROR:", error)
+  );
 };
 
 export const ToDoViewMode = (mode) => (dispatch) => {
@@ -51,15 +50,16 @@ export const ToDoViewMode = (mode) => (dispatch) => {
 };
 
 export const DeleteToDo = (id) => (dispatch) => {
-  deleteData(BASE_URL + `todos/${id}`)
-    .then(result => {
-      console.log("SUCCESS:", result)
-      return dispatch({
+  deleteData(BASE_URL + `todos/${id}`).then((result) => {
+    // console.log("SUCCESS:", result);
+    return dispatch(
+      {
         type: DELETE_TODO,
         payload: result.id,
       },
-      error => console.log("ERROR:", error))
-    })
+      (error) => console.log("ERROR:", error)
+    );
+  });
 };
 
 export const ToggleToDoDone = (id) => (dispatch) => {
@@ -70,22 +70,23 @@ export const ToggleToDoDone = (id) => (dispatch) => {
 };
 
 export const EditToDo = (id, item) => (dispatch) => {
-  editData(BASE_URL + `todos/${id}`, item)
-    .then(result => {
-      console.log('SUCCESS:', result)
-      return dispatch({
+  editData(BASE_URL + `todos/${id}`, item).then((result) => {
+    // console.log("SUCCESS:", result);
+    return dispatch(
+      {
         type: EDIT_TODO,
         payload: item,
       },
-      error => console.log("ERROR:", error))
-    })
+      (error) => console.log("ERROR:", error)
+    );
+  });
 };
 
 export const DialogEditToDo = (id) => (dispatch) => {
-    return dispatch({
-      type: DIALOG_EDIT_TODO,
-      payload: id,
-    });
+  return dispatch({
+    type: DIALOG_EDIT_TODO,
+    payload: id,
+  });
 };
 
 export const OpenDialog = (id) => (dispatch) => {

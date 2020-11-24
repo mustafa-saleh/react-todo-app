@@ -32,17 +32,17 @@ class ItemsSection extends Component {
       <div>
         <Container className={cls.control}>
           <Typography variant="h5" className={cls.hot}>
-            Got Shit to Do
+            TODOs BOARD
           </Typography>
           <Tooltip title="Grid">
-            <div onClick={e => this.handleClick("grid")}>
+            <div onClick={(e) => this.handleClick("grid")}>
               <IconButton>
                 <AppsIcon fontSize="large" className={cls.icon} />
               </IconButton>
             </div>
           </Tooltip>
           <Tooltip title="List">
-            <div onClick={e => this.handleClick("list")}>
+            <div onClick={(e) => this.handleClick("list")}>
               <IconButton>
                 <FormatListBulletedIcon fontSize="large" className={cls.icon} />
               </IconButton>

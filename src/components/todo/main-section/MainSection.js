@@ -68,7 +68,8 @@ class MainSection extends Component {
         <Box className={classes.box}>
           <Box className={classes.welcome}>
             <div className={styles.greeting}>
-              Hello Friend, What do you feel Like Dowing?
+              React ToDo App, React Redux, Material UI and Higher Order
+              Components
             </div>
           </Box>
           <form onSubmit={this.onSubmit}>
@@ -100,6 +101,5 @@ class MainSection extends Component {
 MainSection.propTypes = {
   AddToDo: PropTypes.func.isRequired,
 };
-
 
 export default withStyles(muiStyle)(connect(null, { AddToDo })(MainSection));

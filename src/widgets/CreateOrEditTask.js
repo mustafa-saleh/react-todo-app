@@ -41,7 +41,7 @@ const CreateOrEditTask = (props) => {
         id="outlined-multiline-static"
         multiline
         rows={1}
-        label="Got Work to Do?"
+        label="ToDo message here.."
         variant="outlined"
         className={classes.txtarea}
         name="body"

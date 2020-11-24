@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Layout>
-        <ToDo></ToDo>
+        <ToDo />
       </Layout>
     </Provider>
   );
